@@ -1,0 +1,23 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    import java.util.Scanner;
+
+    class Main {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            // put your code here
+        }
+    }
+  learner_created: false
+- name: src/FieldDescription.java
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/2272#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 26 Sep 2021 08:38:51 UTC
+record: -1
