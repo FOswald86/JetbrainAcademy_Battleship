@@ -282,12 +282,9 @@ files:
         }
     }
   learner_created: false
-- name: src/battleship/BattleField.java
-  visible: true
-  learner_created: true
-- name: src/battleship/Ship.java
-  visible: true
-  learner_created: true
 feedback_link: https://hyperskill.org/projects/125/stages/663/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sun, 26 Sep 2021 20:56:56 UTC
 record: -1
