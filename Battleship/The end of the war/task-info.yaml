@@ -370,5 +370,124 @@ files:
     }
   learner_created: false
 feedback_link: https://hyperskill.org/projects/125/stages/666/implement#comment
-status: Unchecked
+status: Failed
+feedback:
+  message: |-
+    Error in test #1
+
+    The program Main has unexpectedly terminated.
+    It finished execution too early, should continue running.
+
+    Please find below the output of your program during this failed test.
+    Note that the &#39;&gt;&#39; character indicates the beginning of the input line.
+
+    ---
+
+    1 2 3 4 5 6 7 8 9 10
+    A ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    B ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    C ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    D ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    E ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    F ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    G ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    H ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    I ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    J ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+    Enter the coordinate of the Aircraft Carrier (5 cells):
+    &gt; F3 F7
+
+      1 2 3 4 5 6 7 8 9 10
+    A ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    B ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    C ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    D ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    E ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    F ~ ~ O O O O O ~ ~ ~
+    G ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    H ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    I ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    J ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+    Enter the coordinate of the Battleship (4 cells):
+    &gt; A1 D1
+
+      1 2 3 4 5 6 7 8 9 10
+    A O ~ ~ ~ ~ ~ ~ ~ ~ ~
+    B O ~ ~ ~ ~ ~ ~ ~ ~ ~
+    C O ~ ~ ~ ~ ~ ~ ~ ~ ~
+    D O ~ ~ ~ ~ ~ ~ ~ ~ ~
+    E ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    F ~ ~ O O O O O ~ ~ ~
+    G ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    H ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    I ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    J ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+    Enter the coordinate of the Submarine (3 cells):
+    &gt; J7 J10
+    Error! Wrong length of the Submarine! Try again:
+    &gt; J10 J8
+
+      1 2 3 4 5 6 7 8 9 10
+    A O ~ ~ ~ ~ ~ ~ ~ ~ ~
+    B O ~ ~ ~ ~ ~ ~ ~ ~ ~
+    C O ~ ~ ~ ~ ~ ~ ~ ~ ~
+    D O ~ ~ ~ ~ ~ ~ ~ ~ ~
+    E ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    F ~ ~ O O O O O ~ ~ ~
+    G ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    H ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    I ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    J ~ ~ ~ ~ ~ ~ ~ O O O
+
+    Enter the coordinate of the Cruiser (3 cells):
+    &gt; B9 D8
+    Error! Wrong ship location! Try again:
+    &gt; B9 D9
+
+      1 2 3 4 5 6 7 8 9 10
+    A O ~ ~ ~ ~ ~ ~ ~ ~ ~
+    B O ~ ~ ~ ~ ~ ~ ~ O ~
+    C O ~ ~ ~ ~ ~ ~ ~ O ~
+    D O ~ ~ ~ ~ ~ ~ ~ O ~
+    E ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    F ~ ~ O O O O O ~ ~ ~
+    G ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    H ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    I ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    J ~ ~ ~ ~ ~ ~ ~ O O O
+
+    Enter the coordinate of the Destroyer (2 cells):
+    &gt; E6 D6
+    Error! You placed it too close to another one. Try again:
+    &gt; I2 J2
+
+      1 2 3 4 5 6 7 8 9 10
+    A O ~ ~ ~ ~ ~ ~ ~ ~ ~
+    B O ~ ~ ~ ~ ~ ~ ~ O ~
+    C O ~ ~ ~ ~ ~ ~ ~ O ~
+    D O ~ ~ ~ ~ ~ ~ ~ O ~
+    E ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    F ~ ~ O O O O O ~ ~ ~
+    G ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    H ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    I ~ O ~ ~ ~ ~ ~ ~ ~ ~
+    J ~ O ~ ~ ~ ~ ~ O O O
+
+    The game starts!
+
+      1 2 3 4 5 6 7 8 9 10
+    A ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    B ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    C ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    D ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    E ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    F ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    G ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    H ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    I ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    J ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+  time: Sun, 26 Sep 2021 22:45:29 UTC
 record: -1
