@@ -27,13 +27,23 @@ public class Main {
         preSetGrid(newGrid);
         System.out.println("\nThe game starts!");
         printGrid(newGrid);
-        while (!wincheck(grid)) {
+        while (true) {
+            String shipsLeft = "";
+            for (int i = 0; i < grid.length; i++) {
+                for (int j = 0; j < grid.length; j++) {
+                    shipsLeft += grid[i][j];
+                }
+            }
+            if (!shipsLeft.contains("O")) {
+                System.out.println("You sank the last ship. You won. Congratulations!");
+                break;
+            }
             System.out.println("\nTake a shot!\n");
             String target = scanner.next().toUpperCase(Locale.ROOT);
             int row = (target.charAt(0) - 'A');
             int column = Integer.parseInt(target.substring(1));
             try {
-                if (grid[row][column - 1] == 'O') {
+                if (grid[row][column - 1] == 'O' || grid[row][column - 1] == 'X') {
                     newGrid[row][column - 1] = 'X';
                     grid[row][column - 1] = 'X';
                     printGrid(newGrid);
@@ -44,24 +54,10 @@ public class Main {
                     printGrid(newGrid);
                     System.out.println("\nYou missed!");
                 }
-                printGrid(grid);
             } catch (IndexOutOfBoundsException e) {
                 System.out.println("Error! Coordinates should be between A - J and 1 - 10! Try again:");
             }
         }
-    }
-
-    static boolean wincheck(char[][] grid) {
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid.length; j++) {
-                if (grid[i][j] == 'O') {
-                    return true;
-                } else {
-                    System.out.println("You sank the last ship. You won. Congratulations!");
-                }
-            }
-        }
-        return false;
     }
 
     static void placeShip(String shipName, int shipSize, char[][] grid) {

@@ -1,0 +1,40 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    class Main {
+        public static void main(String[] args) {
+            // put your code here
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2153#comment
+status: Failed
+feedback:
+  message: |
+    Failed test #1 of 9. Wrong answer
+
+    This is a sample test from the problem statement!
+
+    Test input:
+    1
+    2
+    3
+    4
+    0
+    Correct output:
+    odd
+    even
+    odd
+    even
+
+
+    Your code output:
+    odd
+    even
+    odd
+    even
+    even
+  time: Tue, 28 Sep 2021 08:53:08 UTC
+record: -1
