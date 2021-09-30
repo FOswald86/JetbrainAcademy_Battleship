@@ -6,57 +6,102 @@ import java.util.Scanner;
 public class Main {
 
     static Scanner scanner = new Scanner(System.in);
+    static Scanner scanner1 = new Scanner(System.in);
+    static int player = 1;
 
     public static void main(String[] args) {
 
-        char[][] grid = new char[10][10];
+        char[][] gridPlayer1 = new char[10][10];
+        char[][] gridPlayer2 = new char[10][10];
 
-        preSetGrid(grid);
-        printGrid(grid);
+        System.out.println("Player 1, place your ships on the game field");
+        preSetGrid(gridPlayer1);
+        printGrid(gridPlayer1);
+        placeShip("Aircraft Carrier", 5, gridPlayer1);
+        placeShip("Battleship", 4, gridPlayer1);
+        placeShip("Submarine", 3, gridPlayer1);
+        placeShip("Cruiser", 3, gridPlayer1);
+        placeShip("Destroyer", 2, gridPlayer1);
+        passMove();
 
-        placeShip("Aircraft Carrier", 5, grid);
-        placeShip("Battleship", 4, grid);
-        placeShip("Submarine", 3, grid);
-        placeShip("Cruiser", 3, grid);
-        placeShip("Destroyer", 2, grid);
-        play(grid);
+        System.out.println("Player 2, place your ships on the game field");
+        preSetGrid(gridPlayer2);
+        printGrid(gridPlayer2);
+        placeShip("Aircraft Carrier", 5, gridPlayer2);
+        placeShip("Battleship", 4, gridPlayer2);
+        placeShip("Submarine", 3, gridPlayer2);
+        placeShip("Cruiser", 3, gridPlayer2);
+        placeShip("Destroyer", 2, gridPlayer2);
+        passMove();
+
+        play(gridPlayer1, gridPlayer2);
     }
 
-    static void play(char[][] grid) {
-        char[][] newGrid = new char[10][10];
-        preSetGrid(newGrid);
-        System.out.println("\nThe game starts!");
-        printGrid(newGrid);
+    static void play(char[][] gridPlayer1, char[][] gridPlayer2) {
+        char[][] newGridgridPlayer1 = new char[10][10];
+        char[][] newGridgridPlayer2 = new char[10][10];
+        preSetGrid(newGridgridPlayer1);
+        preSetGrid(newGridgridPlayer2);
+
         while (true) {
-            String shipsLeft = "";
-            for (int i = 0; i < grid.length; i++) {
-                for (int j = 0; j < grid.length; j++) {
-                    shipsLeft += grid[i][j];
+            String shipsLeftPlayer1 = "";
+            String shipsLeftPlayer2 = "";
+            for (int i = 0; i < gridPlayer1.length; i++) {
+                for (int j = 0; j < gridPlayer1.length; j++) {
+                    shipsLeftPlayer1 += gridPlayer1[i][j];
+                    shipsLeftPlayer2 += gridPlayer2[i][j];
                 }
             }
-            if (!shipsLeft.contains("O")) {
+            if (!shipsLeftPlayer1.contains("O") || !shipsLeftPlayer2.contains("O")) {
                 System.out.println("You sank the last ship. You won. Congratulations!");
                 break;
             }
-            System.out.println("\nTake a shot!\n");
+            if (player == 1) {
+                printGrid(newGridgridPlayer2);
+                System.out.println("---------------------");
+                printGrid(gridPlayer1);
+                System.out.println("\nPlayer 1, it's your turn:");
+            } else if (player == 2) {
+                printGrid(newGridgridPlayer1);
+                System.out.println("---------------------");
+                printGrid(gridPlayer2);
+                System.out.println("\nPlayer 2, it's your turn:");
+            }
             String target = scanner.next().toUpperCase(Locale.ROOT);
             int row = (target.charAt(0) - 'A');
             int column = Integer.parseInt(target.substring(1));
-            try {
-                if (grid[row][column - 1] == 'O' || grid[row][column - 1] == 'X') {
-                    newGrid[row][column - 1] = 'X';
-                    grid[row][column - 1] = 'X';
-                    printGrid(newGrid);
-                    System.out.println("\nYou hit a ship!");
-                } else if (grid[row][column - 1] == '~') {
-                    newGrid[row][column - 1] = 'M';
-                    grid[row][column - 1] = 'M';
-                    printGrid(newGrid);
-                    System.out.println("\nYou missed!");
+            if (player == 1) {
+                try {
+                    if (gridPlayer2[row][column - 1] == 'O' || gridPlayer2[row][column - 1] == 'X') {
+                        newGridgridPlayer2[row][column - 1] = 'X';
+                        gridPlayer2[row][column - 1] = 'X';
+                        System.out.println("\nYou hit a ship!");
+                    } else if (gridPlayer2[row][column - 1] == '~') {
+                        newGridgridPlayer2[row][column - 1] = 'M';
+                        gridPlayer2[row][column - 1] = 'M';
+                        System.out.println("\nYou missed!");
+                    }
+                } catch (IndexOutOfBoundsException e) {
+                    System.out.println("Error! Coordinates should be between A - J and 1 - 10! Try again:");
                 }
-            } catch (IndexOutOfBoundsException e) {
-                System.out.println("Error! Coordinates should be between A - J and 1 - 10! Try again:");
+            } else if (player == 2) {
+                printGrid(newGridgridPlayer1);
+                System.out.println("---------------------");
+                try {
+                    if (gridPlayer1[row][column - 1] == 'O' || gridPlayer2[row][column - 1] == 'X') {
+                        newGridgridPlayer1[row][column - 1] = 'X';
+                        gridPlayer1[row][column - 1] = 'X';
+                        System.out.println("\nYou hit a ship!");
+                    } else if (gridPlayer1[row][column - 1] == '~') {
+                        newGridgridPlayer1[row][column - 1] = 'M';
+                        gridPlayer1[row][column - 1] = 'M';
+                        System.out.println("\nYou missed!");
+                    }
+                } catch (IndexOutOfBoundsException e) {
+                    System.out.println("Error! Coordinates should be between A - J and 1 - 10! Try again:");
+                }
             }
+            passMove();
         }
     }
 
@@ -152,13 +197,23 @@ public class Main {
 
     static void printGrid(char[][] grid) {
         String alpha = "ABCDEFGHIJ";
-        System.out.println("\n  1 2 3 4 5 6 7 8 9 10");
+        System.out.println("  1 2 3 4 5 6 7 8 9 10");
         for (int i = 0; i < grid.length; i++) {
             System.out.print(alpha.charAt(i));
             for (int j = 0; j < grid.length; j++) {
                 System.out.print(" " + grid[i][j]);
             }
             System.out.println();
+        }
+    }
+
+    static void passMove() {
+        System.out.println("Press Enter and pass the move to another player");
+        String passMove = scanner1.nextLine();
+        if (passMove.equals("") && player == 1) {
+            player++;
+        } else if (passMove.equals("") && player == 2) {
+            player--;
         }
     }
 }

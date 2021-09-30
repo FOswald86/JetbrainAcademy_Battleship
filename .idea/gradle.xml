@@ -13,6 +13,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Battleship/task" />
+            <option value="$PROJECT_DIR$/Topics/Abstract class/IntBinaryOperation" />
+            <option value="$PROJECT_DIR$/Topics/Abstract class/Shape hierarchy" />
+            <option value="$PROJECT_DIR$/Topics/Abstract class/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Abstract class/Users and WebSites" />
             <option value="$PROJECT_DIR$/Topics/Branching statements/Bus tour" />
             <option value="$PROJECT_DIR$/Topics/Branching statements/Even or odd" />
             <option value="$PROJECT_DIR$/Topics/Branching statements/The sequence" />
@@ -43,6 +47,17 @@
             <option value="$PROJECT_DIR$/Topics/Interface/Compact strings with AsciiCharSequence" />
             <option value="$PROJECT_DIR$/Topics/Interface/Mutable geometric shapes" />
             <option value="$PROJECT_DIR$/Topics/Interface/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Polymorphism/Find mistake" />
+            <option value="$PROJECT_DIR$/Topics/Polymorphism/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/Convert a date" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/Double characters" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/Find the first occurrence of the word  the" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/Palindrome" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/Piece of alphabet" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/The longest word" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/The lucky ticket" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/The percentage of G and C characters" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/Theory" />
             <option value="$PROJECT_DIR$/Topics/Relational operators/Boys in a sport class" />
             <option value="$PROJECT_DIR$/Topics/Relational operators/Check the given numbers are different" />
             <option value="$PROJECT_DIR$/Topics/Relational operators/Check the sum" />

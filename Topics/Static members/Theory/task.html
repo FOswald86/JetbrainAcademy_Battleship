@@ -4,7 +4,7 @@
  <body>
   <p>All objects of a class have the same fields and methods, but the values of the fields of objects are usually different. At the same time, a class may also have fields and methods which are common for all objects. Such fields and methods are known as <strong>static members</strong>. To declare them you should write the keyword <code class="language-java">static</code>.</p> 
   <p>In this topic, you will learn how to use static class members. As a bonus, you will finally understand what the <code class="language-java">static</code> keyword means in the declaration of the <code class="language-java">main</code> method.</p> 
-  <h2 style="text-align: center;">Class variables</h2> 
+  <h5 style="text-align: center;">Class variables</h5> 
   <p>A <strong>class variable (static field)</strong> is a field declared with the keyword <code class="language-java">static</code>. It can have any primitive or reference type, just like a regular instance field. A static field has the same value for all instances of the class. It belongs to the class, rather than to an instance of the class.</p> 
   <p>If we want all instances of a class to share a common value, for example, a global variable, then it's better to declare it as static. This can save memory because a single copy of a static variable is shared by all created objects.</p> 
   <p>Static variables can be accessed directly by the class name. To access a static field you should write:</p> 
@@ -56,7 +56,7 @@ System.out.println(SomeClass.lastCreated);</code></pre>
   <pre><code class="language-java">null
 Sun Aug 20 17:49:24 YEKT 2017
 Sun Aug 20 17:49:25 YEKT 2017</code></pre> 
-  <h2 style="text-align: center;">Class constants</h2> 
+  <h5 style="text-align: center;">Class constants</h5> 
   <p><strong>Static fields</strong> with the keyword <code class="language-java">final</code> are class constants. They can not be changed. According to the naming convention, constant fields should always be written in the upper case with the underscore (<code class="language-java">_</code>) to separate parts of the name.</p> 
   <p>The standard class <code class="language-java">Math</code> , for example, contains two static constants:</p> 
   <pre><code class="language-java">public static final double E = 2.7182818284590452354;
@@ -81,7 +81,7 @@ public static final double PI = 3.14159265358979323846;</code></pre>
 System.out.println(Physics.SPEED_OF_LIGHT); // 299792458</code></pre> 
   <p>Since those fields are constants, we cannot change their values. If we try to do it, we'll get an error:</p> 
   <pre><code class="language-java">Physics.ELECTRON_MASS = 10; // compile-time error</code></pre> 
-  <h2 style="text-align: center;">Class methods</h2> 
+  <h5 style="text-align: center;">Class methods</h5> 
   <p>A class may have <strong>static methods</strong> as well as <strong>static fields</strong>. Such methods are also known as <strong>class methods</strong>. A static method can be accessed by the class name and doesn't need an object of the class.</p> 
   <p>Static methods can be called directly by the class name. To access a method you should write:</p> 
   <pre><code class="language-java">ClassName.staticMethodName(args);</code></pre> 
@@ -133,7 +133,7 @@ System.out.println(Physics.SPEED_OF_LIGHT); // 299792458</code></pre>
     anotherClassInstance.invokeAnotherClassStaticMethod();
 }</code></pre> 
   <p>An example of a static method is the <code class="language-java">main</code> method. It always should be static.</p> 
-  <h2 style="text-align: center;">Conclusion</h2> 
+  <h5 style="text-align: center;">Conclusion</h5> 
   <p>In this lesson, we've considered static fields and methods and some cases where they can be used. It is important, that static members cannot access values of objects' fields since there is no instance context (<code class="language-java">this</code>). But they are good for providing a set of common constants (together with <code class="language-java">final</code>) and utility methods for the whole project. We will consider other interesting ways to use static members in the next topics.</p>
  </body>
 </html>
