@@ -26,7 +26,7 @@ class Triangle extends Shape {
     double c;
 
     public Triangle(double a, double b, double c) {
-        this.a = super(a);
+        //this.a = super(a);
         this.b = b;
         this.c = c;
     }

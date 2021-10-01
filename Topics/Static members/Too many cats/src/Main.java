@@ -20,12 +20,6 @@ class Cat {
         }
         Reader reader = null;
 
-        try {
-            reader = new FileReader("file.txt");
-            // some code
-        } finally {
-            reader.close();
-        }
     }
 
     public static int getNumberOfCats() {
