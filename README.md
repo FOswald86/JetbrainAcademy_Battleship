@@ -16,7 +16,7 @@ Signs on Battlefield:
 O = part of a ship  
 X = a hit on a ship  
 
-<img src="https://ezgif.com/optimize/ezgif-1-bacd6e29e68d.gif" width="800" height="500" />  
+<img src="https://github.com/FOswald86/JetbrainAcademy_Battleship/blob/master/BattleShips.gif" width="800" height="500" />  
 
 https://hyperskill.org/projects/125  
 
