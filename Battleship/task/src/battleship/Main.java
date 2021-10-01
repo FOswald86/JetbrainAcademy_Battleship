@@ -8,6 +8,18 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
     static Scanner scanner1 = new Scanner(System.in);
     static int player = 1;
+    static int shipCountPlayer1 = 0;
+    static int shipCountPlayer2 = 0;
+    static String aircraftPlayer1 = "";
+    static String battleshipPlayer1 = "";
+    static String submarinePlayer1 = "";
+    static String cruiserPlayer1 = "";
+    static String destroyerPlayer1 = "";
+    static String aircraftPlayer2 = "";
+    static String battleshipPlayer2 = "";
+    static String submarinePlayer2 = "";
+    static String cruiserPlayer2 = "";
+    static String destroyerPlayer2 = "";
 
     public static void main(String[] args) {
 
@@ -42,20 +54,7 @@ public class Main {
         char[][] newGridgridPlayer2 = new char[10][10];
         preSetGrid(newGridgridPlayer1);
         preSetGrid(newGridgridPlayer2);
-
         while (true) {
-            String shipsLeftPlayer1 = "";
-            String shipsLeftPlayer2 = "";
-            for (int i = 0; i < gridPlayer1.length; i++) {
-                for (int j = 0; j < gridPlayer1.length; j++) {
-                    shipsLeftPlayer1 += gridPlayer1[i][j];
-                    shipsLeftPlayer2 += gridPlayer2[i][j];
-                }
-            }
-            if (!shipsLeftPlayer1.contains("O") || !shipsLeftPlayer2.contains("O")) {
-                System.out.println("You sank the last ship. You won. Congratulations!");
-                break;
-            }
             if (player == 1) {
                 printGrid(newGridgridPlayer2);
                 System.out.println("---------------------");
@@ -75,7 +74,72 @@ public class Main {
                     if (gridPlayer2[row][column - 1] == 'O' || gridPlayer2[row][column - 1] == 'X') {
                         newGridgridPlayer2[row][column - 1] = 'X';
                         gridPlayer2[row][column - 1] = 'X';
-                        System.out.println("\nYou hit a ship!");
+                        if (aircraftPlayer2.contains(target)) {
+                            aircraftPlayer2 = aircraftPlayer2.replaceAll(target, "");
+                            if (aircraftPlayer2.equals("")) {
+                                shipCountPlayer2--;
+                                if (shipCountPlayer2 > 2) {
+                                    System.out.println("You sank a ship!");
+                                } else {
+                                    System.out.println("You sank the last ship. You won. Congratulations!");
+                                    break;
+                                }
+                            } else {
+                                System.out.println("You hit a ship!");
+                            }
+                        } else if (battleshipPlayer2.contains(target)) {
+                            battleshipPlayer2 = battleshipPlayer2.replaceAll(target, "");
+                            if (battleshipPlayer2.equals("")) {
+                                shipCountPlayer2--;
+                                if (shipCountPlayer2 > 2) {
+                                    System.out.println("You sank a ship!");
+                                } else {
+                                    System.out.println("You sank the last ship. You won. Congratulations!");
+                                    break;
+                                }
+                            } else {
+                                System.out.println("You hit a ship!");
+                            }
+                        } else if (submarinePlayer2.contains(target)) {
+                            submarinePlayer2 = submarinePlayer2.replaceAll(target, "");
+                            if (submarinePlayer2.equals("")) {
+                                shipCountPlayer2--;
+                                if (shipCountPlayer2 > 2) {
+                                    System.out.println("You sank a ship!");
+                                } else {
+                                    System.out.println("You sank the last ship. You won. Congratulations!");
+                                    break;
+                                }
+                            } else {
+                                System.out.println("You hit a ship!");
+                            }
+                        } else if (cruiserPlayer2.contains(target)) {
+                            cruiserPlayer2 = cruiserPlayer2.replaceAll(target, "");
+                            if (cruiserPlayer2.equals("")) {
+                                shipCountPlayer2--;
+                                if (shipCountPlayer2 > 2) {
+                                    System.out.println("You sank a ship!");
+                                } else {
+                                    System.out.println("You sank the last ship. You won. Congratulations!");
+                                    break;
+                                }
+                            } else {
+                                System.out.println("You hit a ship!");
+                            }
+                        } else if (destroyerPlayer2.contains(target)) {
+                            destroyerPlayer2 = destroyerPlayer2.replaceAll(target, "");
+                            if (destroyerPlayer2.equals("")) {
+                                shipCountPlayer2--;
+                                if (shipCountPlayer2 > 2) {
+                                    System.out.println("You sank a ship!");
+                                } else {
+                                    System.out.println("You sank the last ship. You won. Congratulations!");
+                                    break;
+                                }
+                            } else {
+                                System.out.println("You hit a ship!");
+                            }
+                        }
                     } else if (gridPlayer2[row][column - 1] == '~') {
                         newGridgridPlayer2[row][column - 1] = 'M';
                         gridPlayer2[row][column - 1] = 'M';
@@ -85,25 +149,90 @@ public class Main {
                     System.out.println("Error! Coordinates should be between A - J and 1 - 10! Try again:");
                 }
             } else if (player == 2) {
-                printGrid(newGridgridPlayer1);
-                System.out.println("---------------------");
                 try {
                     if (gridPlayer1[row][column - 1] == 'O' || gridPlayer2[row][column - 1] == 'X') {
                         newGridgridPlayer1[row][column - 1] = 'X';
                         gridPlayer1[row][column - 1] = 'X';
-                        System.out.println("\nYou hit a ship!");
-                    } else if (gridPlayer1[row][column - 1] == '~') {
-                        newGridgridPlayer1[row][column - 1] = 'M';
-                        gridPlayer1[row][column - 1] = 'M';
-                        System.out.println("\nYou missed!");
+                        if (aircraftPlayer1.contains(target)) {
+                            aircraftPlayer1 = aircraftPlayer1.replaceAll(target, "");
+                            if (aircraftPlayer1.equals("")) {
+                                shipCountPlayer1--;
+                                if (shipCountPlayer1 > 1) {
+                                    System.out.println("You sank a ship!");
+                                } else {
+                                    System.out.println("You sank the last ship. You won. Congratulations!");
+                                    break;
+                                }
+                            } else {
+                                System.out.println("You hit a ship!");
+                            }
+                        } else if (battleshipPlayer1.contains(target)) {
+                            battleshipPlayer1 = battleshipPlayer1.replaceAll(target, "");
+                            if (battleshipPlayer1.equals("")) {
+                                shipCountPlayer1--;
+                                if (shipCountPlayer1 > 2) {
+                                    System.out.println("You sank a ship!");
+                                } else {
+                                    System.out.println("You sank the last ship. You won. Congratulations!");
+                                    break;
+                                }
+                            } else {
+                                System.out.println("You hit a ship!");
+                            }
+                        } else if (submarinePlayer1.contains(target)) {
+                            submarinePlayer1 = submarinePlayer1.replaceAll(target, "");
+                            if (submarinePlayer1.equals("")) {
+                                shipCountPlayer1--;
+                                if (shipCountPlayer1 > 2) {
+                                    System.out.println("You sank a ship!");
+                                } else {
+                                    System.out.println("You sank the last ship. You won. Congratulations!");
+                                    break;
+                                }
+                            } else {
+                                System.out.println("You hit a ship!");
+                            }
+                        } else if (cruiserPlayer1.contains(target)) {
+                            cruiserPlayer1 = cruiserPlayer1.replaceAll(target, "");
+                            if (cruiserPlayer1.equals("")) {
+                                shipCountPlayer1--;
+                                if (shipCountPlayer1 > 2) {
+                                    System.out.println("You sank a ship!");
+                                } else {
+                                    System.out.println("You sank the last ship. You won. Congratulations!");
+                                    break;
+                                }
+                            } else {
+                                System.out.println("You hit a ship!");
+                            }
+                        } else if (destroyerPlayer1.contains(target)) {
+                            destroyerPlayer1 = destroyerPlayer1.replaceAll(target, "");
+                            if (destroyerPlayer1.equals("")) {
+                                shipCountPlayer1--;
+                                if (shipCountPlayer1 > 2) {
+                                    System.out.println("You sank a ship!");
+                                } else {
+                                    System.out.println("You sank the last ship. You won. Congratulations!");
+                                    break;
+                                }
+                            } else {
+                                System.out.println("You hit a ship!");
+                            }
+                        } else if (gridPlayer1[row][column - 1] == '~') {
+                            newGridgridPlayer1[row][column - 1] = 'M';
+                            gridPlayer1[row][column - 1] = 'M';
+                            System.out.println("\nYou missed!");
+                        }
                     }
                 } catch (IndexOutOfBoundsException e) {
                     System.out.println("Error! Coordinates should be between A - J and 1 - 10! Try again:");
                 }
             }
+
             passMove();
         }
     }
+
 
     static void placeShip(String shipName, int shipSize, char[][] grid) {
         System.out.printf("\nEnter the coordinate of the %s (%d cells):\n", shipName, shipSize);
@@ -127,14 +256,15 @@ public class Main {
             } else if (!validPosition(firstLetter, secondLetter, firstNumber, secondNumber, grid)) {
                 System.out.println("Error! You placed it too close to another one. Try again:");
             } else {
-                placeShip(firstLetter, secondLetter, firstNumber, secondNumber, grid);
+                placeShip(firstLetter, secondLetter, firstNumber, secondNumber, grid, shipSize);
                 printGrid(grid);
                 break;
             }
         }
     }
 
-    static boolean validPosition(char firstLetter, char secondLetter, int firstNumber, int secondNumber, char[][] grid) {
+    static boolean validPosition(char firstLetter, char secondLetter, int firstNumber, int secondNumber,
+                                 char[][] grid) {
         int rowStart = Math.min(firstLetter - 'A', secondLetter - 'A');
         int rowEnd = Math.max(firstLetter - 'A', secondLetter - 'A');
         int columnStart = Math.min(firstNumber - 1, secondNumber - 1);
@@ -169,13 +299,76 @@ public class Main {
         return true;
     }
 
-    static void placeShip(char firstLetter, char secondLetter, int firstNumber, int secondNumber, char[][] grid) {
+    static void placeShip(char firstLetter, char secondLetter, int firstNumber, int secondNumber, char[][] grid,
+                          int shipSize) {
+        int count = 0;
         if (firstLetter == secondLetter) {
             int row = firstLetter - 'A';
             int colstart = Math.min(firstNumber - 1, secondNumber - 1);
             int colend = Math.max(firstNumber - 1, secondNumber - 1);
             for (int i = colstart; i <= colend; i++) {
                 grid[row][i] = 'O';
+                if (player == 1 && count < shipSize && shipCountPlayer1 == 0) {
+                    aircraftPlayer1 += firstLetter + "" + (i + 1);
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer1++;
+                    }
+                } else if (player == 1 && count < shipSize && shipCountPlayer1 == 1) {
+                    battleshipPlayer1 += firstLetter + "" + (i + 1);
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer1++;
+                    }
+                } else if (player == 1 && count < shipSize && shipCountPlayer1 == 2) {
+                    submarinePlayer1 += firstLetter + "" + (i + 1);
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer1++;
+                    }
+                } else if (player == 1 && count < shipSize && shipCountPlayer1 == 3) {
+                    cruiserPlayer1 += firstLetter + "" + (i + 1);
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer1++;
+                    }
+                } else if (player == 1 && count < shipSize && shipCountPlayer1 == 4) {
+                    destroyerPlayer1 += firstLetter + "" + (i + 1);
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer1++;
+                    }
+                } else if (player == 2 && count < shipSize && shipCountPlayer2 == 0) {
+                    aircraftPlayer2 += firstLetter + "" + (i + 1);
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer2++;
+                    }
+                } else if (player == 2 && count < shipSize && shipCountPlayer2 == 1) {
+                    battleshipPlayer2 += firstLetter + "" + (i + 1);
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer2++;
+                    }
+                } else if (player == 2 && count < shipSize && shipCountPlayer2 == 2) {
+                    submarinePlayer2 += firstLetter + "" + (i + 1);
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer2++;
+                    }
+                } else if (player == 2 && count < shipSize && shipCountPlayer2 == 3) {
+                    cruiserPlayer2 += firstLetter + "" + (i + 1);
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer2++;
+                    }
+                } else if (player == 2 && count < shipSize && shipCountPlayer2 == 4) {
+                    destroyerPlayer2 += firstLetter + "" + (i + 1);
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer2++;
+                    }
+                }
             }
         } else if (firstNumber == secondNumber) {
             int rowstart = Math.min(firstLetter - 'A', secondLetter - 'A');
@@ -183,6 +376,87 @@ public class Main {
             int col = firstNumber - 1;
             for (int i = rowstart; i <= rowend; i++) {
                 grid[i][col] = 'O';
+                if (player == 1 && count < shipSize && shipCountPlayer1 == 0) {
+                    int tempNumber = firstLetter + i;
+                    char tempChar = (char) tempNumber;
+                    aircraftPlayer1 += tempChar + "" + firstNumber;
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer1++;
+                    }
+                } else if (player == 1 && count < shipSize && shipCountPlayer1 == 1) {
+                    int tempNumber = firstLetter + i;
+                    char tempChar = (char) tempNumber;
+                    battleshipPlayer1 += tempChar + "" + firstNumber;
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer1++;
+                    }
+                } else if (player == 1 && count < shipSize && shipCountPlayer1 == 2) {
+                    int tempNumber = firstLetter + i;
+                    char tempChar = (char) tempNumber;
+                    submarinePlayer1 += tempChar + "" + firstNumber;
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer1++;
+                    }
+                } else if (player == 1 && count < shipSize && shipCountPlayer1 == 3) {
+                    int tempNumber = firstLetter + i;
+                    char tempChar = (char) tempNumber;
+                    cruiserPlayer1 += tempChar + "" + firstNumber;
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer1++;
+                    }
+                } else if (player == 1 && count < shipSize && shipCountPlayer1 == 4) {
+                    int tempNumber = firstLetter + i;
+                    char tempChar = (char) tempNumber;
+                    destroyerPlayer1 += tempChar + "" + firstNumber;
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer1++;
+                    }
+                } else if (player == 2 && count < shipSize && shipCountPlayer2 == 0) {
+                    int tempNumber = firstLetter + i;
+                    char tempChar = (char) tempNumber;
+                    aircraftPlayer2 += tempChar + "" + firstNumber;
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer2++;
+                    }
+                } else if (player == 2 && count < shipSize && shipCountPlayer2 == 1) {
+                    int tempNumber = firstLetter + i;
+                    char tempChar = (char) tempNumber;
+                    battleshipPlayer2 += tempChar + "" + firstNumber;
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer2++;
+                    }
+                } else if (player == 2 && count < shipSize && shipCountPlayer2 == 2) {
+                    int tempNumber = firstLetter + i;
+                    char tempChar = (char) tempNumber;
+                    submarinePlayer2 += tempChar + "" + firstNumber;
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer2++;
+                    }
+                } else if (player == 2 && count < shipSize && shipCountPlayer2 == 3) {
+                    int tempNumber = firstLetter + i;
+                    char tempChar = (char) tempNumber;
+                    cruiserPlayer2 += tempChar + "" + firstNumber;
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer2++;
+                    }
+                } else if (player == 2 && count < shipSize && shipCountPlayer2 == 4) {
+                    int tempNumber = firstLetter + i;
+                    char tempChar = (char) tempNumber;
+                    destroyerPlayer2 += tempChar + "" + firstNumber;
+                    count++;
+                    if (count == shipSize) {
+                        shipCountPlayer2++;
+                    }
+                }
             }
         }
     }
