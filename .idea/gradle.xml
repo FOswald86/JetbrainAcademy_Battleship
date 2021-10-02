@@ -24,6 +24,11 @@
             <option value="$PROJECT_DIR$/Topics/Branching statements/Even or odd" />
             <option value="$PROJECT_DIR$/Topics/Branching statements/The sequence" />
             <option value="$PROJECT_DIR$/Topics/Branching statements/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Constructor/Account and its owner" />
+            <option value="$PROJECT_DIR$/Topics/Constructor/Book" />
+            <option value="$PROJECT_DIR$/Topics/Constructor/Complex numbers" />
+            <option value="$PROJECT_DIR$/Topics/Constructor/Geometric cube" />
+            <option value="$PROJECT_DIR$/Topics/Constructor/Theory" />
             <option value="$PROJECT_DIR$/Topics/Custom exceptions/Checked exception with constructor" />
             <option value="$PROJECT_DIR$/Topics/Custom exceptions/DriverNotReadyException" />
             <option value="$PROJECT_DIR$/Topics/Custom exceptions/Square class" />

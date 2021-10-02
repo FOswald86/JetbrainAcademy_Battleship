@@ -11,8 +11,9 @@ files:
     }
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/2120#comment
-status: Solved
+status: Failed
 feedback:
-  message: <html>Correct solution</html>
-  time: Thu, 30 Sep 2021 10:24:19 UTC
+  message: |
+    Failed test #3 of 6. Wrong answer
+  time: Fri, 01 Oct 2021 14:06:32 UTC
 record: -1
